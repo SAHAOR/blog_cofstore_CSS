@@ -48,11 +48,15 @@ h3{
     font-size: 3.2rem;
     font-style: normal;
     font-weight: 300;
+    line-height: 1.5;
 }
 h4{
     font-size: 2.8rem;
     font-style: italic;
     font-weight: 500;
+    line-height: 1.5;
+    padding: 1rem 0;
+    
 }
 img{
     max-width: 100%;
@@ -95,6 +99,7 @@ p{
     font-size: 2.3rem;
     margin-top: 10rem;
     margin-bottom: 1.5rem;
+    font-style: italic;
 }
 .header__texto p{
     font-size: 1.5rem;
@@ -160,24 +165,35 @@ p{
     }
 }
 
+/*contenido principal*/
 .entrada{
     margin-bottom: 6rem;
 }
-/*contenido principal*/
+.imagen{
+    border-radius: 1rem;
+}
+.contenido-principal{
+    display: grid;
+    grid-template-areas: "arriba" "abajo";
+    gap: 2rem;
+}
+.contenido-principal__sidebar{
+    text-align: center;
+    grid-area: arriba;
+}
 @media (min-width: 768px) {
     .entrada{
         border-bottom: 1px solid var(--claro) ;
     }
     .contenido-principal{
         display: grid;
+        grid-auto-flow: dense;
         grid-template-columns: 2fr 1fr;
-        gap: 4rem;
+        gap: 6rem;
     }
     .contenido-principal__sidebar{
-        text-align: center;
-    }
-    .imagen{
-        border-radius: 1rem;
+        text-align: left;
+        grid-column: 2/3;
     }
 }
 
@@ -190,6 +206,10 @@ p{
     border-radius: .5rem;
     text-align: center;
     padding: 1rem 3rem;
+    border: none;
+}
+.boton:hover{
+    cursor: pointer;
 }
 .boton--primario{
     background-color: var(--negro);
@@ -199,3 +219,178 @@ p{
         padding: .2rem;
     }
 }
+
+.cursos{
+    padding: 0;
+    list-style: none;
+}
+
+.widget-curso{
+    border-bottom: 2px solid var(--claro) ;
+    margin-bottom: 4rem;
+}
+.widget-curso:last-of-type{
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .widget-curso:last-of-type{
+        margin-bottom: 4rem;
+    }
+}
+.widget-curso__label{
+    margin: 0;
+    font-size: 1.8rem;
+}
+.widget-curso__info{
+}
+.boton--secundario{
+    background-color: var(--primario);
+    margin: 2rem 0rem;
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--negro);
+}
+.logo__nombre--footer{
+    margin: 0;
+}
+
+/*sobre nosotros*/
+.sobre-nosotros__imagen img{
+    border-radius: 1rem;
+}
+
+.sobre-nosotros__contenido{
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+    .sobre-nosotros__imagen{
+        margin-bottom: 3rem;
+    }
+}
+
+/*Cursos pagina*/
+.curso{
+    margin: 4rem 0;
+    padding: 0rem 0;
+    margin-bottom: 0rem;
+    border-bottom: 2px solid var(--claro);
+}
+.curso:last-of-type{
+    margin-bottom: 4rem;
+}
+.boton--registrate{
+    background-color: var(--primario);
+    margin: 2rem 0rem;  
+}
+
+@media (min-width: 768px) {
+    .curso{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 3rem;
+    }
+    .curso__titulo{
+        margin-bottom: 2rem;
+    }
+    .curso__descripcion{
+        margin-bottom: 2rem;
+    }
+    .boton--registrate{
+        width: 40%;
+        margin-top: 2rem;
+    }
+
+}
+
+/*entrada blog*/
+.blog-entrada__imagen{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.blog-entrada__imagen img{
+    width: 100%;
+    border-radius: 1rem;   
+}
+.blog-entrada__contenido{
+    margin-bottom: 1rem;
+}
+.blog__titulo{
+    text-align: center;
+}
+.blog-entrada__boton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+}
+.boton--volver{
+    background-color: var(--negro);
+    margin-bottom: 4rem; 
+    width: 90%;
+    line-height: 1;
+    padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .blog-entrada__imagen img{
+        width: 60%;
+    }
+    .blog-entrada__boton{
+        justify-content: right;
+    }
+    .boton--volver{
+        width: 30%;
+        padding: 1rem 0;
+    }
+}
+
+/*Entrada formulario*/
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+}
+.formulario{
+    max-width: 90rem;
+    background-color: var(--blanco);
+    margin: -10rem auto 0 auto;
+    border-radius: 1rem;
+    padding: 5rem;
+}
+.campo{
+    display: flex;
+    margin-bottom: 3rem;
+}
+.campo__label{
+    flex: 0 0 15rem; /*para que el elmento no crezca*/
+    text-align: right;
+    padding-right: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
+}
+.campo__field{
+    flex: 1 ; /*factor de crecimiento de 1 al elemento*/
+    padding: 1rem;
+    border: 1px solid var(--claro);
+}
+.campo__field--textarea{
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid var(--claro);
+    height: 25rem;
+
+}
+
