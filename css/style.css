@@ -207,24 +207,29 @@ p{
     text-align: center;
     padding: 1rem 3rem;
     border: none;
+    transition: color 0.2s ease;
 }
 .boton:hover{
     cursor: pointer;
+    color: #000;
 }
 .boton--primario{
     background-color: var(--negro);
+    transition: background-color 0.2s ease;
+}
+.boton--primario:hover{
+    background-color: var(--claro);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349); /* Añade sombra al pasar el ratón sobre el botón */
 }
 @media (min-width: 768px) {
     .boton{
         padding: .2rem;
     }
 }
-
 .cursos{
     padding: 0;
     list-style: none;
 }
-
 .widget-curso{
     border-bottom: 2px solid var(--claro) ;
     margin-bottom: 4rem;
@@ -246,6 +251,11 @@ p{
 .boton--secundario{
     background-color: var(--primario);
     margin: 2rem 0rem;
+    transition: background-color 0.2s ease;
+}
+.boton--secundario:hover{
+    background-color: var(--claro);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349); /* Añade sombra al pasar el ratón sobre el botón */
 }
 
 /*Footer*/
@@ -290,6 +300,11 @@ p{
 .boton--registrate{
     background-color: var(--primario);
     margin: 2rem 0rem;  
+    transition: background-color 0.2s ease;
+}
+.boton--registrate:hover{
+    background-color: var(--claro);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349); /* Añade sombra al pasar el ratón sobre el botón */
 }
 
 @media (min-width: 768px) {
@@ -339,6 +354,11 @@ p{
     width: 90%;
     line-height: 1;
     padding: 2rem 0;
+    transition: background-color 0.2s ease;
+}
+.boton--volver:hover{
+    background-color: var(--claro);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349); /* Añade sombra al pasar el ratón sobre el botón */
 }
 
 @media (min-width: 768px) {
@@ -364,33 +384,100 @@ p{
     border-radius: 1rem;
 }
 .formulario{
-    max-width: 90rem;
+    width: 80%;
     background-color: var(--blanco);
-    margin: -10rem auto 0 auto;
+    margin: -30rem auto 0 auto;
     border-radius: 1rem;
-    padding: 5rem;
+    padding: 5rem 2rem;
 }
 .campo{
     display: flex;
+    flex-direction: column;
     margin-bottom: 3rem;
 }
+.boton--enviar{
+    background-color: var(--negro);
+    margin: 0 auto;
+    margin-bottom: 1rem; 
+    width: 90%;
+    line-height: 1;
+    padding: 2rem 0;
+    transition: background-color 0.2s ease;
+}
+.boton--enviar:hover{
+    background-color: var(--claro);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349); /* Añade sombra al pasar el ratón sobre el botón */
+}
 .campo__label{
-    flex: 0 0 15rem; /*para que el elmento no crezca*/
-    text-align: right;
-    padding-right: 2rem;
+    text-align: left;
+    padding-right: 0rem;
     font-size: 1.8rem;
     line-height: 1.3;
 }
 .campo__field{
-    flex: 1 ; /*factor de crecimiento de 1 al elemento*/
     padding: 1rem;
     border: 1px solid var(--claro);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 200;
 }
 .campo__field--textarea{
-    flex: 1;
     padding: 1rem;
     border: 1px solid var(--claro);
-    height: 25rem;
+    height: 10rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
 
+@media (min-width: 768px) {
+    .formulario{
+        max-width: 80rem;
+        margin: -20rem auto 0 auto;
+        padding: 5rem;
+    }
+    .campo__label{
+        flex: 0 0 15rem; /*para que el elmento no crezca*/
+        text-align: right;
+        padding-right: 2rem;
+    }
+    .campo{
+        display: flex;
+        flex-direction: row;
+    }
+    .campo__field{
+        flex: 1 ; /*factor de crecimiento de 1 al elemento*/
+    }
+    .campo__field--textarea{
+    flex: 1;
+    height: 20rem;
+    }
+}
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-info__copyright, .footer-info__direccion{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: var(--blanco);
+    margin: 0;
+    line-height: 1.5;
+}
+.footer-info__direccion{
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-info__direccion{
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
 }
 
