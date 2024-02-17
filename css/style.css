@@ -81,8 +81,13 @@ p{
 }
 
 /*header*/
-.header{
+.webp .header{ /*USO DE MODERNIZR, SI NAVEGADOR SOPORTA WEBP LA CARGA AQUI*/
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header{ /*SI NO LO SOPORTA LA CARGA EN JPG*/
     background-image: url(../img/banner.jpg);
+}
+.header{
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,21 +152,37 @@ p{
     }   
 }
 
+.navegacion{
+    width: 100%;
+}
 .navegacion__enlace{
     display: block;
     text-align: center;
     font-size: 2.3rem;
     text-decoration: none;
     color: var(--blanco);
+    width: 100%;
+}
+.navegacion__enlace:hover{
+    background-color: var(--primario);
+    border-radius: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.349);
 }
 
 @media (min-width: 768px) {
     .navegacion{
         display: flex;
-        gap: 2rem;
+        gap: 0rem;
+        width: auto;
     }
     .navegacion__enlace{
         font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+    .navegacion__enlace:hover{
+        text-decoration:underline;
+        background-color: transparent;
+        text-shadow: 2px 2px 4px #888888, -2px -2px 4px #cccccc;
     }
 }
 

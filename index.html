@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cofstore Blog</title>
-    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Parte del SEO (puntuacion en google para posicionar la pagina) -->
+    <meta name="description" content="Pagina web de una tienda de cafe en Colombia">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Protest+Guerrilla&family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
  
+    <!-- PREFETCH: precargar el documento que probablemente es el siguiente --> 
+    <link rel="prefetch" href="nosotros.html" as="document">
+    <!-- FIN PREFETCH -->
+
+    <!-- PRELOAD: cargar ciertos elementos de la pagina mas rapido -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FIN PRELOAD -->
+
+    <!-- FORMATOS MAS LIGEROS PARA SUBIR IMAGENES: webp (hasta la mitad y misma calida, poca compatibilidad) -->
+
 </head>
 
 <body>
@@ -29,7 +46,7 @@
         </div>
 
         <div class="header__texto">
-            <h2 class="no-margin">El mejor cafe para los mejores paladares</h2>
+            <h2 class="no-margin">El mejor café para los mejores paladares</h2>
             <p class="no-margin">Aprende de la mano de expertos</p>
         </div>
     </header>
@@ -38,40 +55,53 @@
             <h3>Nuestro Blog</h3>
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img class="imagen" src="img/blog1.jpg" alt="imagen blog">
+
+                    <!-- Manera para poner como alternativas dos formatos de imagen, si no carga el ligero carga el fijo -->
+                    <picture> 
+                        <source srcset="img/blog1.webp" type="image/webp">
+                        <!-- LOADING LAZY permite cargar los elementos a medida que aparezcan en pantalla -->
+                        <img loading="lazy" class="imagen" src="img/blog1.jpg" alt="imagen blog">
+                    </picture>
+                    
                 </div>
                 <div class="entrada__contenido">
-                    <h4 class="no-margin">Tipos de grano de cafe</h4>
+                    <h4 class="no-margin">Tipos de grano de café</h4>
                     <p>
                         Curabitur eu fermentum tellus, ut mollis mi. Nam porta ultricies velit, quis porta nisl placerat ac. Pellentesque ut risus vel velit tincidunt posuere non et purus. In vel euismod dui. Aliquam vulputate lorem neque, quis convallis lectus pellentesque at.
                     </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer mas</a>
+                    <a href="entrada.html" class="boton boton--primario">Leer más</a>
                 </div>
             </article>
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img class="imagen" src="img/blog2.jpg" alt="imagen blog">
+                    <picture> 
+                        <source srcset="img/blog2.webp" type="image/webp">
+                        <img loading="lazy" class="imagen" src="img/blog2.jpg" alt="imagen blog">
+                    </picture>
                 </div>
                 <div class="entrada__contenido">
                     <h4 class="no-margin">3 deliciosas recetas para hacer en casa</h4>
                     <p>
                         Curabitur eu fermentum tellus, ut mollis mi. Nam porta ultricies velit, quis porta nisl placerat ac. Pellentesque ut risus vel velit tincidunt posuere non et purus. In vel euismod dui. Aliquam vulputate lorem neque, quis convallis lectus pellentesque at.
                     </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer mas</a>
+                    <a href="entrada.html" class="boton boton--primario">Leer más</a>
                 </div>
             </article>
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img class="imagen" src="img/blog3.jpg" alt="imagen blog">
+                    <picture> 
+                        <source srcset="img/blog3.webp" type="image/webp">
+                        <img loading="lazy" class="imagen" src="img/blog3.jpg" alt="imagen blog">
+                    </picture>
                 </div>
                 <div class="entrada__contenido">
-                    <h4 class="no-margin">Beneficios del cafe</h4>
+                    <h4 class="no-margin">Beneficios del café</h4>
                     <p>
                         Curabitur eu fermentum tellus, ut mollis mi. Nam porta ultricies velit, quis porta nisl placerat ac. Pellentesque ut risus vel velit tincidunt posuere non et purus. In vel euismod dui. Aliquam vulputate lorem neque, quis convallis lectus pellentesque at.
                     </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer mas</a>
+                    <a href="entrada.html" class="boton boton--primario">Leer más</a>
                 </div>
             </article>
         </main>
@@ -80,25 +110,25 @@
 
             <ul class="cursos">
                 <li class="widget-curso">
-                    <h4 class="no-margin">Tecnicas de extraccion de cafe</h4>
+                    <h4 class="no-margin">Tecnicas de extracción de café</h4>
                     <p class="widget-curso__label">Precio:
                         <span class="widget-curso__info">Gratis</span>
                     </p>
                     <p class="widget-curso__label">Cupos:
                         <span class="widget-curso__info">30</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Conoce mas</a>
+                    <a href="entrada.html" class="boton boton--secundario">Conoce más</a>
                 </li>
 
                 <li class="widget-curso">
-                    <h4 class="no-margin">4 recetas de cafe para principiantes</h4>
+                    <h4 class="no-margin">4 recetas de café para principiantes</h4>
                     <p class="widget-curso__label">Precio:
                         <span class="widget-curso__info">Gratis</span>
                     </p>
                     <p class="widget-curso__label">Cupos:
                         <span class="widget-curso__info">30</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Conoce mas</a>
+                    <a href="entrada.html" class="boton boton--secundario">Conoce más</a>
                 </li>
 
             </ul>
@@ -118,5 +148,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/modernizr.js"></script>
+
 </body>
 </html>
