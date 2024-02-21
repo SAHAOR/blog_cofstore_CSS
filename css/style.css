@@ -396,6 +396,22 @@ p{
 }
 
 /*Entrada formulario*/
+
+.error{
+    background-color: rgb(185, 0, 0);
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    border-radius: 1rem;
+}
+.correcto{
+    background-color: rgb(44, 189, 75);
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    border-radius: 1rem;
+}
+
 .contacto-bg{
     background-image: url(../img/contacto.jpg);
     height: 40rem;
